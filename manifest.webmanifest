@@ -1,0 +1,27 @@
+{
+  "name": "Fluxo - Finanças Pessoais",
+  "short_name": "Fluxo",
+  "description": "Controle receitas, despesas, saldo e categorias em um app simples de finanças pessoais.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5eddf",
+  "theme_color": "#123f30",
+  "categories": ["finance", "productivity"],
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
