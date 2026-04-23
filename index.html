@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fluxo | Finanças pessoais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar" aria-label="Cabeçalho do aplicativo">
+        <a class="brand" href="index.html" aria-label="Fluxo - início">
+          <span class="brand-mark">F</span>
+          <span>Fluxo</span>
+        </a>
+        <span class="topbar-pill">Finanças pessoais</span>
+      </header>
+
+      <section class="hero panel">
+        <div class="hero-content">
+          <p class="eyebrow">Controle financeiro</p>
+          <h1>Seu dinheiro, com clareza e ritmo.</h1>
+          <p class="hero-copy">
+            Registre entradas e saídas, acompanhe categorias e veja o mês
+            ganhar forma em poucos segundos.
+          </p>
+          <div class="hero-actions" aria-label="Destaques do aplicativo">
+            <span>Visão mensal</span>
+            <span>Categorias</span>
+            <span>Saldo ao vivo</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-glow" aria-hidden="true"></div>
+          <span>Saldo atual</span>
+          <strong id="balance">R$ 0,00</strong>
+          <small id="monthStatus">Nenhum lançamento ainda</small>
+        </div>
+      </section>
+
+      <section class="summary-grid" aria-label="Resumo financeiro">
+        <article class="summary-card income">
+          <span class="summary-icon">+</span>
+          <span>Receitas</span>
+          <strong id="incomeTotal">R$ 0,00</strong>
+        </article>
+        <article class="summary-card expense">
+          <span class="summary-icon">-</span>
+          <span>Despesas</span>
+          <strong id="expenseTotal">R$ 0,00</strong>
+        </article>
+        <article class="summary-card savings">
+          <span class="summary-icon">%</span>
+          <span>Economia</span>
+          <strong id="savingsRate">0%</strong>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <form class="panel transaction-form" id="transactionForm">
+          <div class="section-heading">
+            <p class="eyebrow">Novo lançamento</p>
+            <h2>Registrar movimento</h2>
+          </div>
+
+          <label>
+            Descrição
+            <input
+              id="description"
+              name="description"
+              type="text"
+              placeholder="Ex: Mercado, salário, aluguel"
+              required
+            />
+          </label>
+
+          <div class="form-row">
+            <label>
+              Valor
+              <input
+                id="amount"
+                name="amount"
+                type="number"
+                min="0.01"
+                step="0.01"
+                placeholder="0,00"
+                required
+              />
+            </label>
+            <label>
+              Data
+              <input id="date" name="date" type="date" required />
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Tipo
+              <select id="type" name="type">
+                <option value="income">Receita</option>
+                <option value="expense">Despesa</option>
+              </select>
+            </label>
+            <label>
+              Categoria
+              <select id="category" name="category">
+                <option>Salário</option>
+                <option>Moradia</option>
+                <option>Alimentação</option>
+                <option>Transporte</option>
+                <option>Lazer</option>
+                <option>Saúde</option>
+                <option>Educação</option>
+                <option>Outros</option>
+              </select>
+            </label>
+          </div>
+
+          <button type="submit">Adicionar lançamento</button>
+        </form>
+
+        <section class="panel list-panel">
+          <div class="section-heading list-heading">
+            <div>
+              <p class="eyebrow">Movimentos</p>
+              <h2>Histórico</h2>
+            </div>
+            <select id="filter" aria-label="Filtrar lançamentos">
+              <option value="all">Todos</option>
+              <option value="income">Receitas</option>
+              <option value="expense">Despesas</option>
+            </select>
+          </div>
+
+          <div class="empty-state" id="emptyState">
+            <strong>Nada registrado ainda.</strong>
+            <span>Adicione o primeiro lançamento para montar seu painel.</span>
+          </div>
+
+          <ul class="transaction-list" id="transactionList"></ul>
+        </section>
+      </section>
+
+      <section class="panel insights">
+        <div class="section-heading">
+          <p class="eyebrow">Categorias</p>
+          <h2>Onde o dinheiro está indo</h2>
+        </div>
+        <div class="category-list" id="categoryList"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
