@@ -1,2 +1,2 @@
-# aplicativo-de-finan-as
+# aplicativo-de-finanças
 Controle Financeiro Pessoal
