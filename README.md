@@ -26,9 +26,7 @@ Abra o arquivo `index.html` no navegador.
 - Layout responsivo para desktop e celular
 - Manifest, ícone instalável e suporte offline básico com service worker
 
-## Publicação
 
-O repositório possui um workflow em `.github/workflows/pages.yml` para publicar automaticamente no GitHub Pages quando houver alterações na branch `main`.
 
 ## Próximos passos possíveis
 
