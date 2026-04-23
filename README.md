@@ -4,9 +4,13 @@ Um aplicativo web simples para controle de finanças pessoais, feito com HTML, C
 
 ## Site publicado
 
-Quando o GitHub Pages estiver ativo, o app ficará disponível em:
-
 https://joaogbmaia.github.io/aplicativo-de-finan-as/
+
+## PWA
+
+O app agora pode ser instalado no celular ou computador como um Progressive Web App.
+
+No celular, abra o link no navegador e use a opção **Adicionar à tela inicial** ou **Instalar app**.
 
 ## Como usar localmente
 
@@ -20,12 +24,11 @@ Abra o arquivo `index.html` no navegador.
 - Análise de despesas por categoria
 - Persistência automática no navegador usando `localStorage`
 - Layout responsivo para desktop e celular
+- Manifest, ícone instalável e suporte offline básico com service worker
 
 ## Publicação
 
 O repositório possui um workflow em `.github/workflows/pages.yml` para publicar automaticamente no GitHub Pages quando houver alterações na branch `main`.
-
-Para qualquer pessoa acessar o link, o repositório precisa estar público ou a conta precisa permitir GitHub Pages público para repositórios privados.
 
 ## Próximos passos possíveis
 
