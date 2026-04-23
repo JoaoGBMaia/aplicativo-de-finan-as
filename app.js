@@ -25,6 +25,8 @@ const categoryList = document.querySelector("#categoryList");
 
 let transactions = loadTransactions();
 
+registerServiceWorker();
+
 dateInput.valueAsDate = new Date();
 
 form.addEventListener("submit", (event) => {
@@ -232,6 +234,18 @@ function getStarterTransactions() {
       category: "Transporte",
     },
   ];
+}
+
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator)) {
+    return;
+  }
+
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js").catch(() => {
+      // The app still works normally if offline support is unavailable.
+    });
+  });
 }
 
 render();
